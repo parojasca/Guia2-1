@@ -8,20 +8,20 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'inicio',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../inicio/inicio.module#InicioPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'producto',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../producto/producto.module#ProductoPageModule'
           }
         ]
       },
@@ -35,15 +35,24 @@ const routes: Routes = [
         ]
       },
       {
+        path:'nosotros',
+        children:[
+          {
+            path:'',
+            loadChildren:'../nosotros/nosotros.module#NosotrosPageModule'
+          }
+        ]
+      },
+      {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/inicio',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/inicio',
     pathMatch: 'full'
   }
 ];
